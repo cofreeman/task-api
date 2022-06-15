@@ -1,0 +1,25 @@
+### 마일스톤 생성, 해당 유저가 프로젝트에 참여하지 않고 있으면 에러
+POST http://localhost:9090/users/2/projects/27/milestones HTTP/1.1
+Content-Type: application/json
+
+{
+  "milestoneName": "마일스톤명",
+  "startDate": "2022-05-30",
+  "endDate": "2022-12-30"
+}
+### 해당 프로젝트의 모든 마일스톤 반환, 해당 유저가 프로젝트에 참여하지 않고 있으면 에러
+GET http://localhost:9090/users/2/projects/27/milestones HTTP/1.1
+### 해당 마일스톤 반환,  해당 유저가 프로젝트에 참여하지 않고 있으면 에러
+GET http://localhost:9090/users/2/projects/27/milestones/2 HTTP/1.1
+### 마일스톤 내용 변경,
+POST http://localhost:9090/users/2/projects/27/milestones/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "milestoneName": "마일스톤명(변경)",
+  "startDate": "2022-05-30",
+  "endDate": "2022-12-30"
+}
+### 마일스톤 삭제
+DELETE http://localhost:9090/users/2/projects/27/milestones/3 HTTP/1.1
+

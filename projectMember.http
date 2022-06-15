@@ -1,0 +1,11 @@
+### 프로젝트 멤버 테이블에 트로젝트 멤버 추가(해당 프로젝트의 어드민이 아닐 경우 에러)
+POST http://localhost:9090/users/2/projects/27/projectMembers HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": 123,
+  "id": "asd"
+}
+###
+GET http://localhost:9090/users/2/projects/27/projectMembers HTTP/1.1
+###
