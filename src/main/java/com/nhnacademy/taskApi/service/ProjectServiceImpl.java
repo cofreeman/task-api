@@ -10,6 +10,7 @@ import com.nhnacademy.taskApi.repository.ProjectMembersRepository;
 import com.nhnacademy.taskApi.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     // 만들면 참여프로젝트에 관리자 등록되고 프로젝트도 생성됨
+    @Transactional
     @Override
     public Projects createProject(Long userId,ProjectRequestDto projectRequestDto) {
 

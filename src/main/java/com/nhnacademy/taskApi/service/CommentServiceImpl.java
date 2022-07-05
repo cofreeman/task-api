@@ -12,11 +12,14 @@ import com.nhnacademy.taskApi.repository.ProjectMembersRepository;
 import com.nhnacademy.taskApi.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@RequestMapping
 public class CommentServiceImpl implements CommentService {
 
     private final CommentRepository commentRepository;
@@ -27,6 +30,7 @@ public class CommentServiceImpl implements CommentService {
     public void deleteComment(Long commentId) {
         commentRepository.deleteById(commentId);
     }
+
 
     @Override
     public Comments createComment(Long userId, Long projectId, Long taskId, CommentCreateDto commentCreateDto) {

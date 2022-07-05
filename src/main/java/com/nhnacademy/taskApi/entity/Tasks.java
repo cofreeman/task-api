@@ -33,6 +33,7 @@ public class Tasks {
     @Column(name = "task_content")
     private String taskContent;
 
+
     public Tasks(Projects projects, Milestones milestones, String taskTitle, String taskContent) {
         this.projects = projects;
         this.milestones = milestones;
