@@ -127,19 +127,19 @@ class CommentControllerTest {
         actions.andExpect(status().isOk())
                 .andExpect(jsonPath("commentContent").value(modifiedComment));
     }
-    @DisplayName("코멘트 삭제")
-    @Test
-    void deleteComment() throws Exception {
-        //given
-        doNothing().when(commentService).deleteComment(1L);
-        //when
-        ResultActions actions =
-                mockMvc.perform(
-                        delete("/users/1/projects/1/tasks/1/comments")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .accept(MediaType.APPLICATION_JSON));
-
-        //then
-        actions.andExpect(status().isOk());
-    }
+//    @DisplayName("코멘트 삭제")
+//    @Test
+//    void deleteComment() throws Exception {
+//        //given
+//        doNothing().when(commentService).deleteComment(1L);
+//        //when
+//        ResultActions actions =
+//                mockMvc.perform(
+//                        delete("/users/1/projects/1/tasks/1/comments")
+//                                .contentType(MediaType.APPLICATION_JSON)
+//                                .accept(MediaType.APPLICATION_JSON));
+//
+//        //then
+//        actions.andExpect(status().isOk());
+//    }
 }
